@@ -139,16 +139,10 @@
 
             }
         },
-        watch: {
-            showLength() {
-                this.createPadding()
-                console.log('watch')
-            }
-        },
         computed: {
 
         },
-        async mounted() {
+        mounted() {
             this.setup()
         }
     }
