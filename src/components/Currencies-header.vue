@@ -139,9 +139,6 @@
 
             }
         },
-        computed: {
-
-        },
         mounted() {
             this.setup()
         }
