@@ -33,7 +33,7 @@
 
         <div class="btns">
             <button @click="prev" :class="{disabled: scrollLeft === 0}" class="prev"><i class="material-icons">chevron_left</i>НАЗАД</button>
-            <button @click="next" :class="{disabled: scrollLeft === scrollWidth - showLength}" class="next">ДАЛЕЕ<i class="material-icons">chevron_right</i></button>
+            <button @click="next" :class="{disabled: scrollLeft === 5040 && showLength === 320 || scrollLeft === 5204 && showLength === 700}" class="next">ДАЛЕЕ<i class="material-icons">chevron_right</i></button>
         </div>
     </div>
 </template>
@@ -111,6 +111,12 @@
                     this.scrollLeft = scroll.scrollLeft
                 }
 
+            }
+        },
+        watch: {
+            scrollLeft() {
+                let scroll = this.$refs.scroll
+                this.showLength = scroll.clientWidth
             }
         },
         mounted() {
